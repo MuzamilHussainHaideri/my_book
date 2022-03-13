@@ -1,0 +1,11 @@
+
+
+<%= simple_form_for @book, :html => { :multipart => true } do |f| %>
+
+  <%= f.file_field :book_img %>
+  <%= f.input :title, label: "Book Title" %>
+  <%= f.input :description %>
+  <%= f.input :author %>
+  <%= f.button :submit, :class => 'btn-custom2' %>
+
+<% end %>

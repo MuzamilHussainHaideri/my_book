@@ -28,6 +28,10 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 gem 'jquery-rails'
+
+gem 'devise'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
