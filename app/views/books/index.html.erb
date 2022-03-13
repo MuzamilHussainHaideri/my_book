@@ -2,11 +2,11 @@
 
   <div class="row">
 
-    <% @books.each do |book| %>
+    <% @book.each do |book| %>
 
       <div class="col-md-3">
         <a href="/books/<%= book.id %>">
-          <%= image_tag book.book_img.url(:book_index), class: "book" %>
+          <%= image_tag book.image.variant(resize_to_limit: [350, 250]) if book.image.attached? %>
         </a>
       </div>
 
