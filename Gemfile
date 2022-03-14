@@ -31,7 +31,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 
-
+gem 'activestorage'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
