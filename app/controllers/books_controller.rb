@@ -7,7 +7,8 @@ class BooksController < ApplicationController
 
   end
   def index
-    @book = Book.all
+    @q = Book.ransack(params[:q])
+    @book = @q.result(distinct: true)
   end
 
   def new

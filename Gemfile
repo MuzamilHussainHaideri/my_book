@@ -33,6 +33,8 @@ gem 'devise'
 
 gem 'activestorage'
 
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
