@@ -1,13 +1,20 @@
 ActiveAdmin.register Book do
 
-   permit_params :title, :description, :author, :user_id
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :description, :author, :user_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+   permit_params :title, :description, :author, :user_id, :image
+
+
+   index do
+      selectable_column
+      column :title
+      column "Image" do |book|
+         image_tag book.image, size: "50x50"
+      end
+
+      column :author
+      column :description
+      column :user_id
+
+      actions
+   end
   
 end
