@@ -3,13 +3,14 @@
   <div class="row">
     <div>
       <%= render 'books/search_form' %>
+      <br>
     </div>
 
     <% @book.each do |book| %>
 
       <div class="col-md-3">
         <a href="/books/<%= book.id %>">
-          <%= image_tag book.image.variant(resize_to_limit: [350, 250]) if book.image.attached? %>
+          <%= image_tag(book.image, size: '200x300') if book.image.attached? %>
           <h4 class="book-title"><%= book.title %></h4>
         </a>
       </div>

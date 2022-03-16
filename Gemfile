@@ -35,6 +35,10 @@ gem 'activestorage'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
+gem 'activeadmin'
+
+gem 'active_skin'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
