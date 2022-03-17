@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :reviews
   end
   root 'books#index'
-  post "book/add_to_cart/:id", to: "book#add_to_cart", as: "add_to_cart"
-  delete "book/remove_from_cart/:id", to: "book#remove_from_cart", as: "remove_from_cart"
+  resources :order_items
+  resource :carts, only: [:show]
 end
