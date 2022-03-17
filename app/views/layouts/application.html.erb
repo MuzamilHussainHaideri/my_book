@@ -16,6 +16,12 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <h4>Shopping cart</h4>
+  <% @cart.each do |book| %>
+    <%= book.name %>
+    <br>
+  <% end %>
+
 <div class="container">
   <%= yield %>
 

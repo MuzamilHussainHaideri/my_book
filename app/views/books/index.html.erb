@@ -12,6 +12,18 @@
         <a href="/books/<%= book.id %>">
           <%= image_tag(book.image, size: '200x200',class: "book") if book.image.attached? %>
           <h4 class="book-title"><%= book.title %></h4>
+          <div >
+            <h4 style="text-align: center "> Price: <%= book.price %>$</h4>
+          </div>
+          <td>
+            <% if @cart.include?(book) %>
+              <%= button_to "Remove from cart", remove_from_cart_path(book), method: :delete %>
+            <% else %>
+              <%= button_to "Add to cart", add_to_cart_path(book) %>
+            <% end %>
+          </td>
+
+
         </a>
       </div>
 

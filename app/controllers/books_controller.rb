@@ -2,6 +2,19 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destory, :update_stauts]
   before_action :authenticate_user!, only: [:new, :edit]
 
+  def add_to_cart
+    id = params[:id].to_i
+    session[:cart] << id unless session[:cart].include?(id)
+    redirect_to book_path
+  end
+
+  def remove_from_cart
+    id = params[:id].to_i
+    session[:cart].delete(id)
+    redirect_to book_path
+  end
+
+
   def is_published
     @book = Book.find(params[:id])
 
@@ -45,7 +58,6 @@ class BooksController < ApplicationController
     @book.destroy
 
     redirect_to root_path
-    
   end
 
   private
