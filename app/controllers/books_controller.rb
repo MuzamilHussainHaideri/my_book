@@ -26,6 +26,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build(book_params)
     if @book.save
+      BookmailerMailer.with(user: current_user, book: @book).book_created.deliver_later
       redirect_to root_path
     else
       render 'new'

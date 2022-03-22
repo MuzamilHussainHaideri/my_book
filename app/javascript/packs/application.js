@@ -17,3 +17,5 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 //= require jquery
 //= require bootstrap-sprockets
+
+    Notification.requestPermission().then(function (result){})
