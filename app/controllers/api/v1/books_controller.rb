@@ -1,5 +1,5 @@
 class Api::V1::BooksController < ApplicationController
-  before_action :set_book, only: %i[ show create update destroy ]
+  before_action :set_book, only: %i[ show update destroy ]
   def index
     @book= Book.all
     render json: @book, root: false
@@ -36,8 +36,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit( :name, :description, :author, :image , :price)
+    params.require(:book).permit( :title, :description, :author, :image, :price)
   end
-
 
 end
