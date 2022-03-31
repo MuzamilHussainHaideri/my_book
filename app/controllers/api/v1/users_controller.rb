@@ -12,7 +12,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: @user, status: :created, location: @book
+      render json: @user, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -35,8 +35,8 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def book_params
-    params.require(:user).permit( :title, :description, :author, :image, :price)
+  def user_params
+    params.require(:user).permit(   :email, :password)
   end
 
 end
