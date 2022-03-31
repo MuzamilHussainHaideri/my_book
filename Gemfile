@@ -51,7 +51,7 @@ gem 'omniauth-facebook'
 
 gem "letter_opener", group: :development
 
-
+gem 'active_model_serializers'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
